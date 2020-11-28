@@ -7,7 +7,7 @@
 		"typeProperties": {
 			"host": "C:\\Users\\Arun\\Desktop\\Onpremisis",
 			"userId": "Arun",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlNTI5OWQ2NC0yYjYxLTQ1ZTEtYjkxYy04YzQwODhjNjFkNmQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzNTE4NDJkMC1jODNiLTRlYjQtYTgzMC01YjViNGU2MDZlODQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "Onpremisestoblob",
