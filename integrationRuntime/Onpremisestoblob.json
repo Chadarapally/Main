@@ -1,0 +1,7 @@
+{
+	"name": "Onpremisestoblob",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "On premises to Blob "
+	}
+}
