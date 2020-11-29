@@ -34,7 +34,7 @@
 				}
 			},
 			{
-				"name": "ForEach1_multiple",
+				"name": "ForEach1_Multi",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -64,10 +64,11 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"SourceDirectory": {
-										"value": "@{item().cnb}",
-										"type": "Expression"
-									}
+									"SourceContainer": "@{item().SourceContainer}",
+									"SourceDirectory": "@{item().SourceDirectory}",
+									"TargetContainer": "@{item().TargetContainer}",
+									"TargetDirectory": "@{item().TargetDirectory}",
+									"Sourcefilename": "@{item().Sourcefilename}"
 								}
 							}
 						}
