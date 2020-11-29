@@ -85,19 +85,19 @@
 			}
 		],
 		"parameters": {
-			"Sourcecontainer": {
+			"SourceContainer": {
 				"type": "string"
 			},
 			"SourceDirectory": {
 				"type": "string"
 			},
-			"targetcontainer": {
+			"TargetContainer": {
 				"type": "string"
 			},
-			"targetdirectory": {
+			"TargetDirectory": {
 				"type": "string"
 			},
-			"filenanme": {
+			"Sourcefilename": {
 				"type": "string"
 			}
 		},
