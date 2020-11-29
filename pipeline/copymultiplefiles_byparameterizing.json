@@ -64,11 +64,7 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"Sourcecontainer": "@{item().sourceblobmultiplefiles}",
-									"SourceDirectory": "@{item().cnb}",
-									"targetcontainer": "@{item().TargetContainer}",
-									"targetdirectory": "@{item().TargetDirectory}",
-									"filenanme": "@{item().Sourcefilename}"
+									"SourceDirectory": "@{item().cnb}"
 								}
 							}
 						}
