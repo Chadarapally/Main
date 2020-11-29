@@ -1,0 +1,22 @@
+{
+	"name": "Onpremises_source_file",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Onpremisestoblob_link",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "Myfile4.txt"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
