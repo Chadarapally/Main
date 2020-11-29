@@ -1,0 +1,44 @@
+{
+	"name": "Mutliplefilesfrommultiplefolders",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Filenames_multiplefolders.txt",
+				"container": "filenames"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SourceContainer",
+				"type": "String"
+			},
+			{
+				"name": "SourceDirectory",
+				"type": "String"
+			},
+			{
+				"name": "Sourcefilename",
+				"type": "String"
+			},
+			{
+				"name": "TargetContainer",
+				"type": "String"
+			},
+			{
+				"name": "TargetDirectory",
+				"type": "String"
+			}
+		]
+	}
+}

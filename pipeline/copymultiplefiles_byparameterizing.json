@@ -1,0 +1,81 @@
+{
+	"name": "copymultiplefiles_byparameterizing",
+	"properties": {
+		"description": "multiplefolders, multiplefiles",
+		"activities": [
+			{
+				"name": "Lookup1_multiplefiles",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "Mutliplefilesfrommultiplefolders",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach1_Multi",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup1_multiplefiles",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup1_multiplefiles').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Execute Pipeline1",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "Copymutliplefilesusingparemeterization",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"SourceContainer": "@{item().SourceContainer}",
+									"SourceDirectory": "@{item().SourceDirectory}",
+									"TargetContainer": "@{item().TargetContainer}",
+									"TargetDirectory": "@{item().TargetDirectory}",
+									"Sourcefilename": "@{item().Sourcefilename}"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"annotations": []
+	}
+}
