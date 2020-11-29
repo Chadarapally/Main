@@ -62,7 +62,14 @@
 									"referenceName": "Copymutliplefilesusingparemeterization",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": true,
+								"parameters": {
+									"Sourcecontainer": "@{item().sourceblobmultiplefiles}",
+									"SourceDirectory": "@{item().cnb}",
+									"targetcontainer": "@{item().TargetContainer}",
+									"targetdirectory": "@{item().TargetDirectory}",
+									"filenanme": "@{item().Sourcefilename}"
+								}
 							}
 						}
 					]
