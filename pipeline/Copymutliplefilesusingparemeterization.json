@@ -25,12 +25,61 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "sourcemultiplefilescontainer",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Container": {
+								"value": "@pipeline().parameters.Sourcecontainer",
+								"type": "Expression"
+							},
+							"Directory": {
+								"value": "@pipeline().parameters.SourceDirectory",
+								"type": "Expression"
+							},
+							"Filename": {
+								"value": "@pipeline().parameters.filenanme",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "tragetmultiplefilesload",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@pipeline().parameters.targetcontainer",
+								"type": "Expression"
+							},
+							"directory": {
+								"value": "@pipeline().parameters.targetdirectory",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
@@ -39,7 +88,7 @@
 			"Sourcecontainer": {
 				"type": "string"
 			},
-			"Directory": {
+			"SourceDirectory": {
 				"type": "string"
 			},
 			"targetcontainer": {
