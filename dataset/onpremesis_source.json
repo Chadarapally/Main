@@ -1,0 +1,27 @@
+{
+	"name": "onpremesis_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Onpremesislinkservices",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "Myfile6.txt"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID\tEGF_Baseline\tEGF_Stimulus",
+				"type": "String"
+			}
+		]
+	}
+}
