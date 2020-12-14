@@ -1,0 +1,6 @@
+{
+	"name": "integrationRuntimeonpremesis",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
