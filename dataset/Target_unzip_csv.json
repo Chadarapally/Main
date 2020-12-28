@@ -1,18 +1,18 @@
 {
-	"name": "Onpremises_source_file",
+	"name": "Target_unzip_csv",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Onpremisestoblob_link",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "FileServerLocation",
-				"fileName": "Myfile5.txt"
+				"type": "AzureBlobStorageLocation",
+				"container": "targetblob"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""

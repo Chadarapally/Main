@@ -1,0 +1,19 @@
+{
+	"name": "Source_json_zip",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Employee.zip",
+				"container": "sourceblob"
+			}
+		},
+		"schema": {}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"name": "newsqlserver_source_AdventureWorksDWBuildVersion",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "newSqlServer1onpremesis",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "DBVersion",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VersionDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "AdventureWorksDWBuildVersion"
+		}
+	}
+}

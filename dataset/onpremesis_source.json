@@ -1,8 +1,8 @@
 {
-	"name": "Onpremises_source_file",
+	"name": "onpremesis_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Onpremisestoblob_link",
+			"referenceName": "Onpremesislinkservices",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,13 +10,18 @@
 		"typeProperties": {
 			"location": {
 				"type": "FileServerLocation",
-				"fileName": "Myfile5.txt"
+				"fileName": "Myfile6.txt"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "ID\tEGF_Baseline\tEGF_Stimulus",
+				"type": "String"
+			}
+		]
 	}
 }
